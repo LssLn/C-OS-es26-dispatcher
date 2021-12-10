@@ -1,7 +1,5 @@
 //												ESERCIZIO 3
 /*
-Implementare un programma in C che permetta la gestione di un servizio ansa tra processi.
-
 Il programma deve prevedere un processo chiamato dispatcher che chiede all'utente di inserire una notizia da tastiera e la invia a tutti i processi in ascolto. 
 
 Non si sa a priori quanti processi sono in ascolto.
@@ -11,6 +9,8 @@ Ogni notizia deve essere letta da tutti i processi in ascolto una sola volta e s
 
 Il processo dispatcher se legge la notizia (stringa) "termina" la scrive nella shared memory, attende che tutti i processi abbiano letto e dopo termina
 
+
+----------------------------------
 Cosa succede al dispatcher: 
 1. legge notizia da tastiera
 2. invia notizia al lettore
@@ -25,6 +25,7 @@ Cosa fa il processo lettore:
 1. all'avvio shm->numlettori++
 2. fa partire un ciclo in cui legge la notizia, se è nuova il contalettore viene incrementato
 
+----------------------------------
 DATI CONDIVISI
 struct dati {
 	int id_notizia;
